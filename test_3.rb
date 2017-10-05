@@ -10,26 +10,40 @@
 	и сравнить ее значение в квадрате с суммой квадратов двух остальных сторон. 
 	Если все 3 стороны равны, то треугольник равнобедренный и равносторонний, но не прямоугольный.
 =end
+array = [3]
 
 print "Введите длину стороны a: "
-a = gets.chomp.to_i
+array.push(gets.chomp.to_f)
 
 print "Введите длину стороны b: "
-b = gets.chomp.to_i
+array.push(gets.chomp.to_f)
 
 print "Введите длину стороны c: "
-c = gets.chomp.to_i
+array.push(gets.chomp.to_f)
 
-if a == b || a == c || c == b
+array.sort!
+
+a = array[0] # катет
+b = array[1] # катет
+c = array[2] # гипотенуза
+
+rectangular = (c**2 == (a**2 + b**2)) # определеили прямоугольность
+isosceles = (a == b && a != c)
+
+
+if isosceles && !rectangular
 	print "Данный треугольник равнобедренный!"
-elsif (a > b && a > c) && (a**2 == (b**2 + c**2))
-	print "Данный треугольник прямоугольный!"
-elsif (b > a && b > c) && (b**2 == (a**2 + c**2))
-	print "Данный треугольник прямоугольный!"
-elsif (c > a && c > b) && (c**2 == (a**2 + b**2))
-	print "Данный треугольник прямоугольный!"
+
+elsif !isosceles && rectangular
+  print "Данный треугольник прямоугольный!"
+
+elsif isosceles && rectangular
+	print "Данный треугольник равнобедренный и прямоугольный!"
+
 elsif c == a && a == b
-	print "Данный треугольник равнобедренный и равносторонний!"
+	print "Данный треугольник равносторонний!"
+
 else
 	print "Данный треугольник не является прямоугольным!"
+
 end

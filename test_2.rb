@@ -5,9 +5,9 @@
 =end
 
 print "Введите длину основания треуголиника: "
-base = gets.chomp
+base = gets.chomp.to_f
 
 print "Введите высоту треуголиника: "
-height = gets.chomp
+height = gets.chomp.to_f
 
-print "Площадь треугольника равна: #{base.to_i*height.to_i/2}."
+print "Площадь треугольника равна: #{base*height/2}."

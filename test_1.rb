@@ -9,10 +9,12 @@ print "Как вас зовут ?"
 name = gets.chomp.capitalize!
 
 print "Каков ваш рост ?"
-weight = gets.chomp
+weight = gets.chomp.to_i
 
-if (weight.to_i - 110) < 0
+control_weight = weight -110
+
+if (control_weight) < 0
 	print "#{name}, Ваш вес уже оптимальный."
-elsif (weight.to_i - 110) > 0 
-	print "#{name}, Ваш идеальный вес: #{weight.to_i - 110.to_i}"
+else
+	print "#{name}, Ваш идеальный вес: #{control_weight}"
 end

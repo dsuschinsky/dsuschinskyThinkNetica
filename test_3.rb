@@ -13,13 +13,13 @@
 array = [3]
 
 print "Введите длину стороны a: "
-array.push(gets.chomp.to_f)
+array << gets.chomp.to_f
 
 print "Введите длину стороны b: "
-array.push(gets.chomp.to_f)
+array << gets.chomp.to_f
 
 print "Введите длину стороны c: "
-array.push(gets.chomp.to_f)
+array << gets.chomp.to_f
 
 array.sort!
 

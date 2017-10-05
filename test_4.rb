@@ -23,15 +23,14 @@ c = gets.chomp.to_f
 d = b**2 - 4*a*c
 
 if d > 0
-  sqrt = Math.sqrt(b**2-4*a*c)
+  sqrt = Math.sqrt(d)
   x1 = (-b + sqrt)/2*a
   x2 = (-b - sqrt)/2*a
 
   print "Дискриминант = #{d}. Уравнение имеет 2 корня: x1=#{x1}, x2=#{x2}."
 
 elsif d == 0
-  sqrt = Math.sqrt(b**2-4*a*c)
-  x1 = (-b + sqrt)/2*a
+  x1 = -b/2*a
   print "Дискриминант = #{d}. Уравнение имеет 1 корень: x1=#{x1}."
 
 else

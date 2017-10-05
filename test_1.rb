@@ -14,7 +14,7 @@ weight = gets.chomp.to_i
 control_weight = weight -110
 
 if (control_weight) < 0
-	print "#{name}, Ваш вес уже оптимальный."
+  print "#{name}, Ваш вес уже оптимальный."
 else
-	print "#{name}, Ваш идеальный вес: #{control_weight}"
+  print "#{name}, Ваш идеальный вес: #{control_weight}"
 end
